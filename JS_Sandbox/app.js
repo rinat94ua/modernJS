@@ -172,3 +172,143 @@ console.log(val);
 
 // console.log(html);
 
+/*
+const friut = ['apple', 'banana', 'pineapple'];
+const numbers = [1,2,5,8,4,79,53,22];
+let val;
+
+val = friut.sort();
+val = numbers.sort();
+
+val = numbers.sort(function(x, y){
+  return y - x;
+});
+
+val = numbers.sort(function (x, y) {
+  return x + y;
+});
+
+// Find
+
+function over50(num){
+  return num > 50;
+}
+val = numbers.find(over50);
+
+console.log(val);
+*/
+/*
+const person = {
+  firstName: 'Steve',
+  lastName: 'Smith',
+  age: 36,
+  email: 'steve@aol.com',
+  hobbies: ['music', 'sport'],
+  address: {
+    city: 'Miami',
+    state: 'FL'
+  },
+  getBirthdayYear: function(){
+    return 2017 - this.age;
+  }
+};
+
+let val;
+val = person.firstName;
+val = person['lastName'];
+val = person['age'];
+val = person['hobbies'];
+val = person['hobbies'][1];
+val = person['address']['city'];
+val = person['getBirthdayYear']();
+
+console.log(val);
+
+const people = [
+  {
+    name: 'John', age: 30
+  },
+  {
+    name: 'Mike', age: 36
+  },
+];
+
+for(let i = 0; i < people.length; i++) {
+  console.log(people[i].name);
+}
+*/
+
+/*
+let val;
+const today = new Date('1/1/2018');
+// let birthDay = new Date('9-10-1981 11:25:00');
+// let birthDay = new Date('September 10 1981');
+let birthDay = new Date('9/10/1981');
+
+val = today.getMonth();
+val = today.getDate();
+val = today.getDay();
+val = today.getYear();
+val = today.getHours();
+val = today.getMinutes();
+val = today.getSeconds();
+val = today.getMilliseconds();
+val = today.getTime();
+
+birthDay.setMonth(2);
+birthDay.setDate(2);
+birthDay.setFullYear(2022);
+birthDay.setHours(3);
+birthDay.setMinutes(30);
+birthDay.setSeconds(25);
+
+console.log(birthDay);
+*/
+
+/*
+//////////////////////////////////
+//////// FUNCTION DECLARATIONS ///
+
+function greet(name = 'John'){
+  // console.log('hello');
+  return 'hello ' + name;
+}
+
+// console.log(greet());
+
+//////////////////////////////////
+//////// FUNCTION EXPRESIONS ////
+
+const square = function(x=0) {
+  return x*x;
+};
+
+// console.log(square());
+
+///////////////////
+//////// IIFE ////
+(function(name){
+  console.log('asdsad' + name);
+}(name));
+
+const todo = {
+  add: function(){
+    console.log('add todo ...');
+  },
+  edit: function(id){
+    console.log(id);
+  }
+};
+
+todo.add();
+todo.edit(22);
+*/
+
+// const user = {
+//   name: 'john',
+//   age: 30
+// };
+
+// for(let x in user) {
+//   console.log(user[x]);
+// }
