@@ -161,7 +161,7 @@ console.log(val);
 
 ///////////////////////////////
 // CREATE ELEMENTS ///////////
-
+/*
 // Create element
 const li = document.createElement('li');
 li.className = 'collection-item';
@@ -184,3 +184,170 @@ li.appendChild(link);
 document.querySelector('ul.collection').appendChild(li);
 
 console.log(li);
+*/
+
+
+////////////////////////////////
+///// REPLACE ELEMENTS ////////
+/*
+// Create element
+const newHeading = document.createElement('h2');
+newHeading.id = 'task-title';
+
+newHeading.appendChild(document.createTextNode('Task list'));
+
+const oldHeading = document.getElementById('task-title');
+// Parent
+const cardAction = document.querySelector('.card-action');
+
+// Replace
+cardAction.replaceChild(newHeading, oldHeading);
+
+// Remove element
+
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// Remove list item
+lis[0].remove();
+
+// Remove child
+list.removeChild(lis[3]);
+
+// Classes & ATTR
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+let val;
+
+// Classes
+ val = link.className;
+ val = link.classList;
+ val = link.classList[0];
+ val = link.classList.add('test');
+ val = link.classList.remove('test');
+ val = link;
+
+// Atributes
+val = link.getAttribute('href');
+val = link.setAttribute('href', 'http://google.com');
+link.removeAttribute('href');
+val = link.hasAttribute('href');
+val = link;
+
+console.log(val);
+*/
+
+
+///////////////////////////
+///// EVENTS /////////////
+/*
+document.querySelector('.clear-tasks').addEventListener('click',
+function(e){
+  console.log('asdsad');
+
+  e.preventDefault();
+});
+
+
+document.querySelector('.clear-tasks').addEventListener('mouseover',function(e){
+  e.preventDefault();
+
+  console.log(e.offsetX);
+});
+
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
+
+
+// clearBtn.addEventListener('click', runEvent);
+// Double click
+// clearBtn.addEventListener('dblclick', runEvent);
+// clearBtn.addEventListener('mousedown', runEvent);
+// clearBtn.addEventListener('mouseup', runEvent);
+// card.addEventListener('mouseenter', runEvent);
+// card.addEventListener('mouseleave', runEvent);
+// card.addEventListener('mouseover', runEvent);
+// card.addEventListener('mouseout', runEvent);
+card.addEventListener('mousemove', runEvent);
+
+//Events Handler
+function runEvent(e) {
+  console.log(`Event type: ${e.type}`);
+
+  heading.textContent = `MouseX: ${e.offsetX} mouseY: ${e.offsetY}`;
+
+  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY},
+  40)`;
+}
+*/
+
+
+////////////////////////////
+//// INPUT EVENTS /////////
+/*
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
+const heading = document.querySelector('h5');
+
+taskInput.value = '';
+
+// form.addEventListener('submit', runEvent);
+
+// taskInput.addEventListener('keydown', runEvent);
+// taskInput.addEventListener('keyup', runEvent);
+// taskInput.addEventListener('keypress', runEvent);
+
+// taskInput.addEventListener('cut', runEvent);
+// taskInput.addEventListener('paste', runEvent);
+
+// taskInput.addEventListener('input', runEvent);
+// taskInput.addEventListener('change', runEvent);
+
+function runEvent(e) {
+  // e.preventDefault();
+
+  // console.log(taskInput.value);
+  
+  console.log(e.type);
+  console.log(e.target.value);
+
+  // heading.innerText = e.target.value; 
+}
+*/
+
+
+
+//////////////////////////////
+///// EVENT BEHAVIOUR ///////
+
+// Event bubbling
+// document.querySelector('.card-title').addEventListener('click', function(){
+//   console.log('card title');
+// });
+
+// document.querySelector('.card-content').addEventListener('click', function () {
+//   console.log('card content');
+// });
+
+// document.querySelector('.card').addEventListener('click', function () {
+//   console.log('card');
+// });
+
+// document.querySelector('.col').addEventListener('click', function () {
+//   console.log('col');
+// });
+
+// Event delegation
+// const delItem = document.querySelector('.delete-item');
+// delItem.addEventListener('click', deleteItem);
+
+document.body.addEventListener('click', deleteItem);
+
+function deleteItem(e){
+  if (e.target.parentElement.classList.contains('delete-item')) {
+    console.log('delete item');
+    e.target.parentElement.parentElement.remove();
+  }
+};
