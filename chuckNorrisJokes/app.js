@@ -7,15 +7,15 @@ function getJokes(e) {
 
   xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true);
 
-  xhr.onload = function() {
+  xhr.onload = function () {
     if(this.status === 200) {
       const response = JSON.parse(this.responseText);
-      
+
       let output = '';
 
-      if(response.type === 'success') {
-        response.value.forEach(function(joke){
-          output += `<li>${joke.joke}</li>`;
+      if (response.type === 'success') {
+        response.value.forEach(function(joke) {
+          output += `<li>${joke.joke}</li>`
         });
       } else {
         output += '<li>Something went wrong</li>';
@@ -26,6 +26,7 @@ function getJokes(e) {
   }
 
   xhr.send();
+  
 
   e.preventDefault();
 }
