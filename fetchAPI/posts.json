@@ -1,14 +1,10 @@
 [
   {
-    "title": "Post One",
-    "body": "This is post one"
+    "title": "POST One",
+    "body": "this is POST one"
   },
   {
-    "title": "Post Two",
-    "body": "This is post two"
-  },
-  {
-    "title": "Post Three",
-    "body": "This is post three"
+    "title": "POST two",
+    "body": "this is POST two"
   }
 ]
