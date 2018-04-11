@@ -1,12 +1,12 @@
-// Iterator Example
+///////////////////////////
+// iterator examp
 // function nameIterator(names) {
-//   let nextIndex = 0;
+//   let nexIndex = 0;
 
 //   return {
 //     next: function() {
-//       return nextIndex < names.length ?
-//       { value: names[nextIndex++], done: false } :
-//       { done: true }
+//       return nexIndex < names.length ? 
+//         { value: names[nexIndex++], done: false } : { done: true }
 //     }
 //   }
 // }
@@ -19,11 +19,12 @@
 // console.log(names.next().value);
 // console.log(names.next().value);
 // console.log(names.next().value);
-// console.log(names.next().value);
+// console.log(names.next());
 
+/////////////////////////////
 // Generator Example
 // function* sayNames() {
-//   yield 'Jack';
+//   yield 'jack';
 //   yield 'Jill';
 //   yield 'John';
 // }
@@ -33,22 +34,19 @@
 // console.log(name.next().value);
 // console.log(name.next().value);
 // console.log(name.next().value);
-// console.log(name.next().value);
+
 
 // ID Creator
-function* createIds() {
-  let index = 1;
+// function* createIDs() {
+//   let index = 1;
+//   while(true) {
+//     yield index++;
+//   }
+// }
 
-  while(true) {
-    yield index++;
-  }
-}
+// const id = createIDs();
 
-const gen = createIds();
+// console.log(id.next().value);
+// console.log(id.next().value);
 
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
+
