@@ -13,7 +13,7 @@ class Weather {
 
     return responseData.current_observation;
   }
-
+  
   // Change weacher location 
   changeLocation(city, state) {
     this.city = city;

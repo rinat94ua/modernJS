@@ -1,22 +1,23 @@
-function EventObserver() {
-  this.observers = [];
-}
+class EventObserver {
+  constructor(){
+    this.observers = [];
+  }
 
-EventObserver.prototype = {
-  subscribe: function (fn){
+  subscribe(fn) {
     this.observers.push(fn);
     console.log(`You are now subscribed to ${fn.name}`);
-  },
+  }
 
-  unsubscrive: function (fn) {
-    this.observers = this.observers.filter(function(item){
-      if(item !== fn){
+  unsubscrive(fn) {
+    this.observers = this.observers.filter(function (item) {
+      if (item !== fn) {
         return item;
       }
     });
-    console.log(`You are now unscribed from ${fn.name}`); 
-  },
-  fire: function () {
+    console.log(`You are now unscribed from ${fn.name}`);
+  }
+
+  fire() {
     this.observers.forEach(item => {
       item.call();
     });
@@ -50,7 +51,7 @@ document.querySelector('.fire').addEventListener('click', function () {
 
 // Click handlers
 const getCurMS = function () {
-  console.log(`Current ms: ${new Date().getMilliseconds()}`); 
+  console.log(`Current ms: ${new Date().getMilliseconds()}`);
 }
 
 const getCurS = function () {
